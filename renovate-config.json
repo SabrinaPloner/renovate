@@ -13,8 +13,9 @@
         "*"
       ],
       "matchUpdateTypes": [
-        "major"
-      ]
+        "minor", "patch"
+      ],
+      "enabled": "false"
     }
   ],
   "recreateWhen": "always"

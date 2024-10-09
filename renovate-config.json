@@ -16,5 +16,6 @@
         "major"
       ]
     }
-  ]
+  ],
+  "recreateWhen": "always"
 }

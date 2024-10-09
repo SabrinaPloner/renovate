@@ -1,0 +1,9 @@
+{
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "platform": "github",
+  "repositories": [
+    "SabrinaPloner/renovate-vulnerability-playground"
+  ],
+  "packageRules": [
+  ]
+}

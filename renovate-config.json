@@ -6,5 +6,15 @@
   ],
   "prHourlyLimit": 0,
   "packageRules": [
+    {
+      "groupName": "all dependencies",
+      "groupSlug": "all",
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ]
+    }
   ]
 }

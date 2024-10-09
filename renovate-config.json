@@ -13,13 +13,14 @@
         "*"
       ],
       "matchUpdateTypes": [
-        "minor", "patch"
+        "minor", "patch", "major"
       ],
       "enabled": "false"
     }
   ],
   "vulnerabilityAlerts": {
-    "enabled": true
+    "enabled": true,
+    "vulnerabilityFixStrategy": "lowest"
   },
   "recreateWhen": "always"
 }

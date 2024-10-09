@@ -18,6 +18,6 @@
       "enabled": "false"
     }
   ],
-  "osvVulnerabilityAlerts": "true",
+  "osvVulnerabilityAlerts": true,
   "recreateWhen": "always"
 }

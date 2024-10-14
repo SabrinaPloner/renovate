@@ -16,7 +16,7 @@
       "matchUpdateTypes": [
         "minor", "patch", "major"
       ],
-      "enabled": "false"
+      "enabled": "true"
     }
   ],
   "recreateWhen": "always"

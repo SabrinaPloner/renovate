@@ -1,0 +1,14 @@
+name: Trigger Renovate
+on:
+  push:
+    branches:
+      - grype
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout playground
+        uses: actions/checkout@v4.2.0
+        with:
+          repository: 'SabrinaPloner/renovate-vulnerability-playground'
+          token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN }}

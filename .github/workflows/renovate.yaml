@@ -9,11 +9,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0
-      - name: Checkout playground
-        uses: actions/checkout@v4.2.0
-        with:
-          repository: 'SabrinaPloner/renovate-vulnerability-playground'
-          token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN }}
       - name: Renovate Bot GitHub Action
         uses: renovatebot/github-action@v40.3.1
         with:

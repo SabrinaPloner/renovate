@@ -2,7 +2,7 @@ name: Trigger Renovate
 on:
   push:
     branches:
-      - main
+      - grype
 jobs:
   renovate:
     runs-on: ubuntu-latest

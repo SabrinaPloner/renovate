@@ -1,11 +1,21 @@
 name: Trigger Renovate
 on:
-  push:
+  workflow_run:
+    workflows: [ "Scan" ]
+    types: [ completed ]
     branches:
-      - grype
+      - 'grype'
+
 jobs:
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
+
   renovate:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0

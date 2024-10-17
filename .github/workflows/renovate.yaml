@@ -33,5 +33,5 @@ jobs:
         uses: renovatebot/github-action@v40.3.1
         with:
           configurationFile: renovate-config.json
-          token: ${{ secrets.RENOVATE_TOKEN
+          token: ${{ secrets.RENOVATE_TOKEN}}
           docker-volumes: 'packages:/packages'

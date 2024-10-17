@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN}}
 
       - name: Check 1
-        run: ls -l
+        run: docker version
 
       - name: Scan repository
         run: docker run --rm --volume .:/scan anchore/grype:latest /scan/renovate-vulnerability-playground -o table > tmp.txt

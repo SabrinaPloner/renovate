@@ -25,8 +25,11 @@ jobs:
           only-fixed: 'true'
           output-format: 'table'
 
-      - name: Transform table
-        run:  bash scripts/transform-table.sh
-
       - name: Check
-        run: bash ls results
+        run: bash ls -l
+
+#      - name: Transform table
+#        run:  bash scripts/transform-table.sh
+#
+#      - name: Check
+#        run: bash ls results

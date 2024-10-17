@@ -2,7 +2,9 @@ name: Scan
 on:
   push:
     branches:
+      - main
       - grype
+
 jobs:
   renovate:
     runs-on: ubuntu-latest

@@ -4,8 +4,6 @@ on:
     workflows: [ "Scan" ]
     types:
       - completed
-    branches:
-      - grype
 
 jobs:
 #  on-failure:

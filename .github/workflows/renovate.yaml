@@ -43,8 +43,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: grype_result
+          workflow: grype.yaml
           github-token:  ${{ secrets.RENOVATE_TOKEN }}
-          run-id: 31661377326
+          run-id: 11381035978
       - name: Check
         run: ls -l
       - name: 'Unzip artifact'

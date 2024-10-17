@@ -11,4 +11,22 @@ jobs:
         uses: actions/checkout@v4.2.0
         with:
           repository: 'SabrinaPloner/renovate-vulnerability-playground'
-          token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN }}
+          token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN
+
+      - name: Build the Container image
+        run: docker build . --file docker/Dockerfile --tag localbuild/testimage:latest
+
+      - name: Scan docker image
+        uses: anchore/scan-action@v3
+        id: scan
+        with:
+          image: "localbuild/testimage:latest"
+          fail-build: false
+          only-fixed: 'true'
+          output-format: 'table'
+
+      - name: Transform table
+        run:  bash scripts/transform-table.sh
+
+      - name: Check
+        run: bash ls results

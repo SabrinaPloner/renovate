@@ -39,13 +39,16 @@ jobs:
 #            let fs = require('fs');
 #            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/grype_result.zip`, Buffer.from(download.data));
 
+      - name: Check workflow-run-id
+        run: echo ${{ github.event.workflow_run.id }}
+
       - name: Download grype result
         uses: actions/download-artifact@v4
         with:
           name: grype_result
-          workflow: grype.yaml
           github-token:  ${{ secrets.RENOVATE_TOKEN }}
-          run-id: 11381035978
+#          run-id: 11381035978
+          run-id: ${{ github.event.workflow_run.id }}
       - name: Check
         run: ls -l
       - name: 'Unzip artifact'

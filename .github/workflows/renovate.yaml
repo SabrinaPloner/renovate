@@ -37,8 +37,10 @@ jobs:
         run: bash scripts/transform-table.sh
 
       - name: Check
-        run: ls
+        run: ls packages
 
+      - name: Check file
+        run: cat packages/commons-io
 #      - name: Renovate Bot GitHub Action
 #        uses: renovatebot/github-action@v40.3.1
 #        with:

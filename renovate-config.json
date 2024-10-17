@@ -18,6 +18,9 @@
       "enabled": "false"
     }
   ],
+  "maven": {
+    "enabled": false
+  },
   "customDatasources": {
     "local_generic": {
       "defaultRegistryUrlTemplate": "file://packages/"

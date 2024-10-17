@@ -17,7 +17,7 @@ jobs:
         run: docker version
 
       - name: Scan repository
-        run: docker run --rm --volume .:/scan anchore/grype:latest /scan -o table > tmp.txt
+        run: docker run --rm --volume .:/scan anchore/grype:latest /scan -o table > grype-output.txt
 
 #      - name: Build the Container image
 #        run: docker build . --file docker/Dockerfile --tag localbuild/testimage:latest
@@ -31,8 +31,11 @@ jobs:
 #          only-fixed: 'true'
 #          output-format: 'table'
 
-      - name: Check
+      - name: Check 2
         run: ls -l
+
+      - name: Check 3
+        run: cat grype-output.txt
 
 #      - name: Transform table
 #        run:  bash scripts/transform-table.sh

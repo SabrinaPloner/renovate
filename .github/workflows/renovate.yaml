@@ -18,49 +18,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0
-#      - name: 'Download grype result'
-#        uses: actions/github-script@v6
-#        with:
-#          script: |
-#            let allArtifacts = await github.rest.actions.listWorkflowRunArtifacts({
-#               owner: context.repo.owner,
-#               repo: context.repo.repo,
-#               run_id: context.payload.workflow_run.id,
-#            });
-#            let matchArtifact = allArtifacts.data.artifacts.filter((artifact) => {
-#              return artifact.name == "grype_result"
-#            })[0];
-#            let download = await github.rest.actions.downloadArtifact({
-#               owner: context.repo.owner,
-#               repo: context.repo.repo,
-#               artifact_id: matchArtifact.id,
-#               archive_format: 'zip',
-#            });
-#            let fs = require('fs');
-#            fs.writeFileSync(`${process.env.GITHUB_WORKSPACE}/grype_result.zip`, Buffer.from(download.data));
-
-      - name: Check workflow-run-id
-        run: echo ${{ github.event.workflow_run.id }}
 
       - name: Download grype result
         uses: actions/download-artifact@v4
         with:
           name: grype_result
           github-token:  ${{ secrets.RENOVATE_TOKEN }}
-#          run-id: 11381035978
           run-id: ${{ github.event.workflow_run.id }}
+
       - name: Check
         run: ls -l
-      - name: 'Unzip artifact'
-        run: unzip grype_result.zip
-      - name: Check 2
-        run: ls -l
 
-#      - name: Transform table
-#        run: bash scripts/transform-table.sh
-#
-#      - name: Check
-#        run: ls packages
+
+      - name: Check 2
+        run: cat grype_output.txt
+
+      - name: Transform table
+        run: bash scripts/transform-table.sh
+
+      - name: Check
+        run: ls
+
 #      - name: Renovate Bot GitHub Action
 #        uses: renovatebot/github-action@v40.3.1
 #        with:

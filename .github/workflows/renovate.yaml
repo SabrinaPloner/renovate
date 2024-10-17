@@ -6,15 +6,15 @@ on:
       - completed
 
 jobs:
-#  on-failure:
-#    runs-on: ubuntu-latest
-#    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-#    steps:
-#      - run: echo 'The triggering workflow failed'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
 
   renovate:
     runs-on: ubuntu-latest
-#    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0
@@ -26,24 +26,12 @@ jobs:
           github-token:  ${{ secrets.RENOVATE_TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
 
-      - name: Check
-        run: ls -l
-
-
-      - name: Check 2
-        run: cat grype_output.txt
-
       - name: Transform table
         run: bash scripts/transform-table.sh
-
-      - name: Check
-        run: ls packages
-
-      - name: Check file
-        run: cat packages/commons-io
 
       - name: Renovate Bot GitHub Action
         uses: renovatebot/github-action@v40.3.1
         with:
           configurationFile: renovate-config.json
-          token: ${{ secrets.RENOVATE_TOKEN }}
+          token: ${{ secrets.RENOVATE_TOKEN
+          docker-volumes: 'packages:/packages'

@@ -2,7 +2,8 @@ name: Renovate
 on:
   workflow_run:
     workflows: [ "Scan" ]
-    types: [ completed ]
+    types:
+      - completed
 
 jobs:
 #  on-failure:

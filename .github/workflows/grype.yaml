@@ -37,8 +37,8 @@ jobs:
       - name: Check 3
         run: cat grype-output.txt
 
-#      - name: Transform table
-#        run:  bash scripts/transform-table.sh
-#
-#      - name: Check
-#        run: bash ls results
+      - name: Transform table
+        run:  bash scripts/transform-table.sh
+
+      - name: Check
+        run: ls packages

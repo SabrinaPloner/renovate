@@ -1,6 +1,6 @@
 #!/bin/bash
 
-awk '{print $1,$3}' vulnerabilites-table-input.txt | tail -n +2 > tmp.txt
+awk '{print $1,$3}' grype-output.txt | tail -n +2 > tmp.txt
 
 mkdir -p packages
 rm -f packages/*

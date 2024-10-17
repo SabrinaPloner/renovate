@@ -17,7 +17,7 @@ jobs:
         run: docker version
 
       - name: Scan repository
-        run: docker run --rm --volume .:/scan anchore/grype:latest /scan/renovate-vulnerability-playground -o table > tmp.txt
+        run: docker run --rm --volume .:/scan anchore/grype:latest /scan -o table > tmp.txt
 
 #      - name: Build the Container image
 #        run: docker build . --file docker/Dockerfile --tag localbuild/testimage:latest

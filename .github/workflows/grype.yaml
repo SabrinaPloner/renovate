@@ -13,8 +13,8 @@ jobs:
           repository: 'SabrinaPloner/renovate-vulnerability-playground'
           token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN}}
 
-      - name: Check 1
-        run: docker version
+#      - name: Check 1
+#        run: docker version
 
       - name: Scan repository
         run: docker run --rm --volume .:/scan anchore/grype:latest /scan -o table > grype-output.txt
@@ -31,14 +31,9 @@ jobs:
 #          only-fixed: 'true'
 #          output-format: 'table'
 
-      - name: Check 2
-        run: ls -l
+#      - name: Check 2
+#        run: ls -l
+#
+#      - name: Check 3
+#        run: cat grype-output.txt
 
-      - name: Check 3
-        run: cat grype-output.txt
-
-      - name: Transform table
-        run:  bash scripts/transform-table.sh
-
-      - name: Check
-        run: ls packages

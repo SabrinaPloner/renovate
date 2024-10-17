@@ -1,10 +1,8 @@
-name: Trigger Renovate
+name: Renovate
 on:
   workflow_run:
     workflows: [ "Scan" ]
     types: [ completed ]
-    branches:
-      - 'grype'
 
 jobs:
   on-failure:
@@ -19,8 +17,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0
-      - name: Renovate Bot GitHub Action
-        uses: renovatebot/github-action@v40.3.1
-        with:
-          configurationFile: renovate-config.json
-          token: ${{ secrets.RENOVATE_TOKEN }}
+      - name: Copy files
+        # todo
+#      - name: Transform table
+#        run: bash scripts/transform-table.sh
+#
+#      - name: Check
+#        run: ls packages
+#      - name: Renovate Bot GitHub Action
+#        uses: renovatebot/github-action@v40.3.1
+#        with:
+#          configurationFile: renovate-config.json
+#          token: ${{ secrets.RENOVATE_TOKEN }}

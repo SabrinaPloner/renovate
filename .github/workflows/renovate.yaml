@@ -4,6 +4,8 @@ on:
     workflows: [ "Scan" ]
     types:
       - completed
+    branches:
+      - grype
 
 jobs:
 #  on-failure:
@@ -23,6 +25,10 @@ jobs:
         with:
           name: grype_result
       - name: Check
+        run: ls -l
+      - name: 'Unzip artifact'
+        run: unzip grype_result.zip
+      - name: Check 2
         run: ls -l
 
 #      - name: Transform table

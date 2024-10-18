@@ -8,7 +8,7 @@
   "packageRules": [
     {
       "groupName": "security updates",
-      "groupSlug": "security",
+      "groupSlug": "security update",
       "enabled": "true"
     }
   ],

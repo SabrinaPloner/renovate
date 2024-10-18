@@ -7,17 +7,6 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
-      "groupName": "all dependencies",
-      "groupSlug": "all",
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "matchUpdateTypes": [
-        "minor", "patch", "major"
-      ],
-      "enabled": "false"
-    },
-    {
       "groupName": "security updates",
       "groupSlug": "security",
       "matchPackagePatterns:": [

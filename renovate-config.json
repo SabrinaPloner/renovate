@@ -12,9 +12,6 @@
       "enabled": "true"
     }
   ],
-  "maven": {
-    "enabled": false
-  },
   "customDatasources": {
     "grype": {
       "defaultRegistryUrlTemplate": "file://packages/{{packageName}}"

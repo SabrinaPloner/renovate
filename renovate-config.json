@@ -9,9 +9,13 @@
     {
       "groupName": "security updates",
       "groupSlug": "security update",
-      "enabled": "true"
+      "enabled": "true",
+      "matchDatasources": ["custom.grype"]
     }
   ],
+  "vulnerabilityAlerts": {
+    "enabled": false
+  },
   "customDatasources": {
     "grype": {
       "defaultRegistryUrlTemplate": "file://packages/{{packageName}}"

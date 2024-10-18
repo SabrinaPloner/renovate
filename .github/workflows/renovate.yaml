@@ -1,37 +1,18 @@
 name: Renovate
 on:
-  workflow_run:
-    workflows: [ "Scan" ]
-    types:
-      - completed
+  push:
+    branches:
+      - vulnerabilityAlert
 
 jobs:
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-    steps:
-      - run: echo 'The triggering workflow failed'
-
   renovate:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0
-
-      - name: Download grype result
-        uses: actions/download-artifact@v4
-        with:
-          name: grype_result
-          github-token:  ${{ secrets.RENOVATE_TOKEN }}
-          run-id: ${{ github.event.workflow_run.id }}
-
-      - name: Transform table
-        run: bash scripts/transform-table.sh
 
       - name: Renovate Bot GitHub Action
         uses: renovatebot/github-action@v40.3.1
         with:
           configurationFile: renovate-config.json
           token: ${{ secrets.RENOVATE_TOKEN}}
-          docker-volumes: 'packages:/packages'

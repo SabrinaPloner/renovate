@@ -18,23 +18,8 @@
       "enabled": "false"
     }
   ],
-  "maven": {
-    "enabled": false
+  "vulnerabilityAlerts": {
+    "enabled": true
   },
-  "customDatasources": {
-    "local_generic": {
-      "defaultRegistryUrlTemplate": "file://packages/"
-    }
-  },
-  "customManagers": [
-    {
-      "fileMatch": ["(^|/|\\.)pom\\.xml$\n^(((\\.mvn)|(\\.m2))/)?settings\\.xml$\n(^|/)\\.mvn/extensions\\.xml$"],
-      "datasourceTemplate": "custom.local_generic",
-      "matchStrings": [
-        "#\\s*renovate:\\s*(datasource=(?<datasource>.*?)\\s*)?depName=(?<depName>.*?)(\\s*versioning=(?<versioning>.*?))?\\s*\\w*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
-  ],
   "recreateWhen": "always"
 }

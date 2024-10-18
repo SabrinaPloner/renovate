@@ -12,7 +12,7 @@
       "matchPackagePatterns:": [
         "*"
       ],
-      "matchDatasource": "grype-scan",
+      "matchDatasources": ["custom.grype"],
       "enabled": "true"
     }
   ],
@@ -20,7 +20,7 @@
     "enabled": false
   },
   "customDatasources": {
-    "grype-scan": {
+    "grype": {
       "defaultRegistryUrlTemplate": "file://packages/{{packageName}}"
     }
   },

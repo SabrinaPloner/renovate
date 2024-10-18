@@ -9,10 +9,6 @@
     {
       "groupName": "security updates",
       "groupSlug": "security",
-      "matchPackagePatterns:": [
-        "*"
-      ],
-      "matchDatasources": ["custom.grype"],
       "enabled": "true"
     }
   ],

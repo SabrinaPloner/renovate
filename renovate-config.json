@@ -1,6 +1,7 @@
 {
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "platform": "github",
+  "osvVulnerabilityAlerts": true,
   "repositories": [
     "SabrinaPloner/renovate-vulnerability-playground"
   ],
@@ -15,11 +16,8 @@
       "matchUpdateTypes": [
         "minor", "patch", "major"
       ],
-      "enabled": "false"
+      "enabled": "true"
     }
   ],
-  "vulnerabilityAlerts": {
-    "enabled": true
-  },
   "recreateWhen": "always"
 }

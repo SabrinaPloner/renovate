@@ -10,9 +10,9 @@
       "groupName": "security updates",
       "groupSlug": "security update",
       "enabled": "true",
-      "matchDatasources": ["custom.grype"],
       "matchPackageNames": ["*"],
-      "matchManagers": ["maven"]
+      "matchDatasources": ["maven"],
+      "overrideDatasource": ["custom.grype"]
     }
   ],
   "vulnerabilityAlerts": {
@@ -20,7 +20,8 @@
   },
   "customDatasources": {
     "grype": {
-      "defaultRegistryUrlTemplate": "file://packages/{{packageName}}"
+      "defaultRegistryUrlTemplate": "file://packages/{{packageName}}",
+      "format": "plain"
     }
   },
   "recreateWhen": "always"

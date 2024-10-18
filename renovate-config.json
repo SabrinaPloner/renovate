@@ -10,7 +10,9 @@
       "groupName": "security updates",
       "groupSlug": "security update",
       "enabled": "true",
-      "matchDatasources": ["custom.grype"]
+      "matchDatasources": ["custom.grype"],
+      "matchPackageNames": ["*"],
+      "matchManagers": ["maven"]
     }
   ],
   "vulnerabilityAlerts": {

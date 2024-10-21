@@ -10,7 +10,9 @@
       "groupName": "all-mavem",
       "groupSlug": "all-maven",
       "enabled": "false",
-      "matchManager": "maven"
+      "matchManagers": [
+        "maven"
+      ]
     }
   ],
   "vulnerabilityAlerts": {
@@ -24,9 +26,8 @@
       ],
       "datasourceTemplate": "custom.grype",
       "matchStrings": [
-        "<version>(?<versioning>.*?)</version>"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        "<version>(?<currentValue>.*?)</version>"
+      ]
     }
   ],
   "customDatasources": {

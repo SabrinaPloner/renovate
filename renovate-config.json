@@ -20,7 +20,7 @@
   },
   "customDatasources": {
     "grype": {
-      "defaultRegistryUrlTemplate": "file:///packages/{{packageName}}",
+      "defaultRegistryUrlTemplate": "file://dependencies/{{packageName}}/versiontracker.json",
       "format": "json",
       "transformTemplates": [
         "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"sourceUrl\": $v.filelink } }) }"

@@ -20,7 +20,7 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "\\custom-ds-example.xml$"
+        "(^|/|\\.)custom-ds-example\\.xml$"
       ],
       "datasourceTemplate": "custom.grype",
       "matchStrings": [

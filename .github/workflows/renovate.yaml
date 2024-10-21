@@ -36,4 +36,4 @@ jobs:
           token: ${{ secrets.RENOVATE_TOKEN}}
           docker-volumes: 'packages:/packages'
         env:
-          LOG_LEVEL: ${{ variables.LOG_LEVEL }}
+          LOG_LEVEL: ${{ vars.LOG_LEVEL }}

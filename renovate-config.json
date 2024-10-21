@@ -18,6 +18,12 @@
   "vulnerabilityAlerts": {
     "enabled": false
   },
+  "logLevelRemap": [
+    {
+      "newLogLevel": "debug"
+    }
+  ]
+  ,
   "customDatasources": {
     "grype": {
       "defaultRegistryUrlTemplate": "file://packages/{{packageName}}",

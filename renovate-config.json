@@ -10,9 +10,10 @@
       "groupName": "security updates",
       "groupSlug": "security update",
       "enabled": "true",
-      "matchPackageNames": ["*"],
+      "matchPackageNames": ["junit:junit"],
       "matchDatasources": ["maven"],
-      "overrideDatasource": ["custom.grype"]
+      "overrideDatasource": ["custom.grype"],
+      "overridePackageName": ["junit"]
     }
   ],
   "vulnerabilityAlerts": {

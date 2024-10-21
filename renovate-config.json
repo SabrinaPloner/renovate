@@ -7,26 +7,34 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
-      "groupName": "security updates",
-      "groupSlug": "security update",
-      "enabled": "true",
-      "matchPackageNames": ["junit:junit"],
-      "matchDatasources": ["maven"],
-      "overrideDatasource": ["custom.grype"],
-      "overridePackageName": ["junit"]
+      "groupName": "all-mavem",
+      "groupSlug": "all-maven",
+      "enabled": "false",
+      "matchManager": "maven"
     }
   ],
   "vulnerabilityAlerts": {
     "enabled": false
   },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "\\custom-ds-example.xml$"
+      ],
+      "datasourceTemplate": "custom.grype",
+      "matchStrings": [
+        "<version>(?<versioning>.*?)</version>"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
   "customDatasources": {
     "grype": {
       "defaultRegistryUrlTemplate": "file:///tmp/dependencies/{{packageName}}/versiontracker.json",
-      "format": "json",
       "transformTemplates": [
-        "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"sourceUrl\": $v.filelink } }) }"
+        "{\n  \"releases\": [\n    {\n      \"version\": \"2.0\"\n    }]\n}"
       ]
-
     }
   },
   "recreateWhen": "always"

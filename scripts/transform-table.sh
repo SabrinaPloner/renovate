@@ -25,5 +25,8 @@ for packagedir in dependencies/*; do
   echo "[{\"version\": \"$version\",\"filelink\": \"https://repo1.maven.org/maven2/junit/junit/4.13.1/junit-4.13.1.pom\"}]" > $packagedir/versiontracker.json
 done
 
+#todo remove
+mkdir dependencies/example
+echo "{\"version\": \"2.0\"}" > "dependencies/example/versiontracker.json"
 
 

@@ -21,7 +21,11 @@
   "customDatasources": {
     "grype": {
       "defaultRegistryUrlTemplate": "file://packages/{{packageName}}",
-      "format": "plain"
+      "format": "plain",
+      "transformTemplates": [
+        "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"sourceUrl\": $v.filelink } }) }"
+      ]
+
     }
   },
   "recreateWhen": "always"

@@ -7,7 +7,7 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
-      "groupName": "all-mavem",
+      "groupName": "all-maven",
       "groupSlug": "all-maven",
       "enabled": "false",
       "matchManagers": [
@@ -22,12 +22,14 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "(^|/|\\.)custom-ds-example\\.xml$"
+        "(^|/|\\.)custom-ds-example\\.yml$"
       ],
       "datasourceTemplate": "custom.grype",
       "matchStrings": [
-        "<version>(?<currentValue>.*?)</version>"
-      ]
+        "#\\s*renovate:\\s*(datasource=(?<datasource>.*?)\\s*)?depName=(?<depName>.*?)(\\s*versioning=(?<versioning>.*?))?\\s*\\w*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+
     }
   ],
   "customDatasources": {

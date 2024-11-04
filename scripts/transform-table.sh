@@ -26,13 +26,7 @@ for packagedir in dependencies/*; do
 done
 
 #todo remove
-mkdir dependencies/example
-echo "{
-        "releases": [
-          {
-            "version": "v2.0"
-          }
-        ]
-      }" > "dependencies/example/versiontracker.json"
+mkdir dependencies/something
+echo "{"releases": [{"version": "v2.0"}]}" > "dependencies/something/versiontracker.json"
 
 

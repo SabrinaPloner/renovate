@@ -21,20 +21,20 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "(^|/|\\.)custom-ds-example\\.yml$"
-      ],
+      "fileMatch": ["\\.yml$"],
       "datasourceTemplate": "custom.grype",
       "matchStrings": [
         "#\\s*renovate:\\s*(datasource=(?<datasource>.*?)\\s*)?depName=(?<depName>.*?)(\\s*versioning=(?<versioning>.*?))?\\s*\\w*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-
     }
   ],
   "customDatasources": {
     "grype": {
-      "defaultRegistryUrlTemplate": "file:///tmp/dependencies/{{packageName}}/versiontracker.json"
+      "defaultRegistryUrlTemplate": "file:///tmp/dependencies/{{packageName}}/versiontracker.json",
+      "transformTemplates": [
+        "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"sourceUrl\": $v.filelink } }) }"
+      ]
     }
   },
   "recreateWhen": "always"

@@ -38,6 +38,5 @@ jobs:
         with:
           configurationFile: renovate-config.json
           token: ${{ secrets.RENOVATE_PLAYGROUND_TOKEN}}
-          docker-volumes: 'dependencies:/tmp/dependencies'
         env:
           LOG_LEVEL: ${{ vars.LOG_LEVEL }}

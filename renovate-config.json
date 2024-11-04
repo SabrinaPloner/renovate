@@ -6,6 +6,12 @@
   ],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 20,
+  "packageRules": [
+    {
+      "matchDatasources": ["maven"],
+      "overrideDatasource": "custom.grype"
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
@@ -19,15 +25,6 @@
       "customType": "regex",
       "fileMatch": ["\\.yml$"],
       "datasourceTemplate": "custom.hashicorp",
-      "matchStrings": [
-        "#\\s*renovate:\\s*(datasource=(?<datasource>.*?) )?depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*\\w*:\\s*(?<currentValue>.*)\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["pom.xml"],
-      "datasourceTemplate": "custom.grype",
       "matchStrings": [
         "#\\s*renovate:\\s*(datasource=(?<datasource>.*?) )?depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*\\w*:\\s*(?<currentValue>.*)\\s"
       ],

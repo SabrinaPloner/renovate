@@ -32,9 +32,8 @@
   "customDatasources": {
     "grype": {
       "defaultRegistryUrlTemplate": "file:///tmp/dependencies/{{packageName}}/versiontracker.json",
-      "transformTemplates": [
-        "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"sourceUrl\": $v.filelink } }) }"
-      ]
+      "transformTemplates": [],
+      "format": "plain"
     }
   },
   "recreateWhen": "always"

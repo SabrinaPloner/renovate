@@ -9,7 +9,9 @@
   "packageRules": [
     {
       "matchDatasources": ["maven"],
-      "overrideDatasource": "custom.grype"
+      "matchPackageNames": ["junit:junit"],
+      "overrideDatasource": "custom.grype",
+      "overridePackageName": "junit"
     }
   ],
   "customManagers": [

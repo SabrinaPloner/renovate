@@ -5,7 +5,7 @@
     "SabrinaPloner/renovate-vulnerability-playground"
   ],
   "prHourlyLimit": 0,
-  "branchConcurrentLimit": 20,
+  "prConcurrentLimit": 20,
   "customManagers": [
     {
       "customType": "regex",

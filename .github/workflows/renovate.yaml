@@ -28,6 +28,10 @@ jobs:
 
       - name: Transform table
         run: bash scripts/transform-table.sh
+        # hier wird dependencies/something/versiontracker.json erstellt
+
+      - name: test
+        run: cat dependencies/something/versiontracker.json
 
       - name: Renovate Bot GitHub Action
         uses: renovatebot/github-action@v40.3.1

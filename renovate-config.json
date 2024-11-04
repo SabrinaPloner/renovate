@@ -36,7 +36,7 @@
         "{ \"releases\": $[license_class=\"oss\"].{\"version\": version,\"releaseTimestamp\": timestamp_created,\"changelogUrl\": url_changelog,\"sourceUrl\": url_source_repository},\"homepage\": $[license_class=\"oss\"][0].url_project_website}"
       ]
     }
-  }
+  },
 
 "recreateWhen": "always"
 }

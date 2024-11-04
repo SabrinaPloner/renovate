@@ -48,7 +48,7 @@
       ]
     },
     "grype": {
-      "defaultRegistryUrlTemplate": "file:///tmp/renovate/repos/github/SabrinaPloner/renovate-vulnerability-playground/dependencies/{{packageName}}/versiontracker.json",
+      "defaultRegistryUrlTemplate": "file:///tmp/dependencies/{{packageName}}/versiontracker.json",
       "transformTemplates": [
         "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"releaseTimestamp\": $v.timestamp_created, \"changelogUrl\": $v.url_changelog, \"sourceUrl\": $v.url_source_repository } }), \"homepage\": $[0].url_project_website, \"sourceUrl\": $[0].url_source_repository }"
       ]

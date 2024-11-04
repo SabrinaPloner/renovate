@@ -11,7 +11,8 @@
       "matchDatasources": ["maven"],
       "matchPackageNames": ["junit:junit"],
       "overrideDatasource": "custom.grype",
-      "overridePackageName": "junit"
+      "overridePackageName": "junit",
+      "registryUrls": []
     }
   ],
   "customManagers": [

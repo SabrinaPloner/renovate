@@ -27,6 +27,12 @@ done
 
 #todo remove
 mkdir dependencies/example
-echo "{\"version\": \"2.0\"}" > "dependencies/example/versiontracker.json"
+echo "{
+        "releases": [
+          {
+            "version": "v2.0"
+          }
+        ]
+      }" > "dependencies/example/versiontracker.json"
 
 

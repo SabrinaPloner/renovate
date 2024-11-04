@@ -11,7 +11,7 @@
       "fileMatch": ["k3s.version"],
       "matchStrings": ["(?<currentValue>\\S+)"],
       "depNameTemplate": "k3s",
-      "versioningTemplate": "semver-coerced",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "custom.k3s"
     }
   ],

@@ -48,9 +48,12 @@
       ]
     },
     "grype": {
-      "defaultRegistryUrlTemplate": "file://datasource/{{packageName}}/versiontracker.txt",
+      "defaultRegistryUrlTemplate": "file://datasource/{{packageName}}/{{version}}",
       "format": "plain"
     }
   },
-"recreateWhen": "always"
+"recreateWhen": "always",
+"vulnerabilityAlerts": {
+  "enabled": true
+}
 }

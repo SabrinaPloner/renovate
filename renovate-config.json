@@ -11,15 +11,8 @@
   "prHourlyLimit": 0,
   "packageRules": [
     {
-      "groupName": "all dependencies",
-      "groupSlug": "all",
-      "matchPackagePatterns": [
-        "*"
-      ],
-      "matchUpdateTypes": [
-        "minor", "patch", "major"
-      ],
-      "enabled": "true"
+      "enabled": false,
+      "matchPackagePatterns": ["*"]
     }
   ],
   "recreateWhen": "always"

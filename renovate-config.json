@@ -1,7 +1,7 @@
 {
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "platform": "github",
-  "osvVulnerabilityAlerts": false,
+  "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "enabled": false
   },

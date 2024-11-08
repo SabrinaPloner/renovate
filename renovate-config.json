@@ -13,9 +13,5 @@
       "matchUpdateTypes": ["*"]
     }
   ],
-"recreateWhen": "always",
-"vulnerabilityAlerts": {
-  "enabled": false
-},
-"osvVulnerabilityAlerts": false
+"recreateWhen": "always"
 }

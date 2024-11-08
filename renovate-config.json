@@ -8,9 +8,9 @@
   "prConcurrentLimit": 20,
   "packageRules": [
     {
-      "enabled": true,
+      "enabled": false,
       "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["*"]
+      "matchUpdateTypes": ["patch","minor", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"]
     }
   ],
 "recreateWhen": "always"

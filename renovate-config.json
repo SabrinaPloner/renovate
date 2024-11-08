@@ -3,7 +3,8 @@
   "platform": "github",
   "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
-    "enabled": true
+    "enabled": true,
+    "vulnerabilityFixStrategy": "highest"
   },
   "repositories": [
     "SabrinaPloner/renovate-vulnerability-playground"

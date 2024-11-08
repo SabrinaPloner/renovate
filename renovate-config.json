@@ -12,9 +12,7 @@
       "matchPackagePatterns": [
         "*"
       ],
-      "matchUpdateTypes": [
-        "minor", "patch", "major"
-      ],
+      "matchUpdateTypes": ["patch","minor", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"],
       "enabled": "false"
     }
   ],

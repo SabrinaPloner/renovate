@@ -12,7 +12,8 @@
   "packageRules": [
     {
       "enabled": false,
-      "matchPackagePatterns": ["*"]
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["patch","minor", "pin", "pinDigest", "digest", "lockFileMaintenance", "rollback", "bump", "replacement"]
     }
   ],
   "recreateWhen": "always"

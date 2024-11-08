@@ -4,7 +4,8 @@
   "osvVulnerabilityAlerts": true,
   "vulnerabilityAlerts": {
     "enabled": true,
-    "vulnerabilityFixStrategy": "highest"
+    "vulnerabilityFixStrategy": "highest",
+    "assignees": ["@SabrinaPloner"]
   },
   "repositories": [
     "SabrinaPloner/renovate-vulnerability-playground"

@@ -4,8 +4,6 @@ on:
     workflows: [ "Scan" ]
     types:
       - completed
-    branches:
-      - custom_datasource
 
 jobs:
   on-failure:

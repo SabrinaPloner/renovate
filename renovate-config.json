@@ -4,6 +4,7 @@
   "repositories": [
     "SabrinaPloner/renovate-vulnerability-playground"
   ],
+  "baseBranches": ["custom_datasource"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 20,
   "packageRules": [

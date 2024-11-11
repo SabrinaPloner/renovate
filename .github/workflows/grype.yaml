@@ -2,8 +2,7 @@ name: Scan
 on:
   push:
     branches:
-      - main
-      - grype
+      - custom_datasource
 
 jobs:
   renovate:

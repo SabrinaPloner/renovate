@@ -5,8 +5,6 @@ awk '{print $1,$3}' grype_output.txt | tail -n +2 > tmp.txt
 mkdir -p dependencies
 rm -rf dependencies/*
 
-
-
 # for each line create a new file
 while read l; do
   packagename=$(echo $l | awk '{print $1}')
@@ -22,12 +20,6 @@ rm tmp.txt
 for packagedir in dependencies/*; do
   version=$(sort $packagedir/versiontracker.json | tail -1)
 
-  echo "[{\"version\": \"$version\",\"filelink\": \"https://repo1.maven.org/maven2/junit/junit/4.13.1/junit-4.13.1.pom\"}]" > $packagedir/versiontracker.json
 done
-
-#todo remove
-mkdir dependencies/something
-echo "1.0.0
-      2.0.0" > "dependencies/something/versiontracker.json"
 
 

@@ -26,7 +26,7 @@
     {
       "customType": "regex",
       "fileMatch": ["\\.yml$"],
-      "datasourceTemplate": "custom.hashicorp",
+      "datasourceTemplate": "custom.grype",
       "matchStrings": [
         "#\\s*renovate:\\s*(datasource=(?<datasource>.*?) )?depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*\\w*:\\s*(?<currentValue>.*)\\s"
       ],
@@ -47,7 +47,7 @@
       ]
     },
     "grype": {
-      "defaultRegistryUrlTemplate": "file://datasource/{{packageName}}/{{version}}",
+      "defaultRegistryUrlTemplate": "file://datasource/{{packageName}}/versiontracker.txt",
       "format": "plain"
     }
   },

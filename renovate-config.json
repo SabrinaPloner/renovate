@@ -9,8 +9,9 @@
   "prConcurrentLimit": 20,
   "packageRules": [
     {
-      "groupName": "other dependencies",
-      "matchPackageNames": ["*"]
+      "groupName": "all maven dependencies",
+      "matchPackageNames": ["*"],
+      "matchDatasources": ["maven"]
     }
   ],
   "customManagers": [

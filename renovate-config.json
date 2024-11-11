@@ -9,11 +9,8 @@
   "prConcurrentLimit": 20,
   "packageRules": [
     {
-      "matchDatasources": ["maven"],
-      "matchPackageNames": ["junit:junit"],
-      "overrideDatasource": "custom.grype",
-      "overridePackageName": "junit",
-      "registryUrls": []
+      "groupName": "other dependencies",
+      "matchPackageNames": ["*"]
     }
   ],
   "customManagers": [

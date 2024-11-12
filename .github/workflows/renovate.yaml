@@ -2,7 +2,7 @@ name: Renovate
 on:
   push:
     branches:
-      - custom_datasource
+      - custom_datasource_maven
 
 jobs:
   renovate:

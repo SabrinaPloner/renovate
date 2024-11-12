@@ -4,14 +4,16 @@
   "repositories": [
     "SabrinaPloner/renovate-vulnerability-playground"
   ],
-  "baseBranches": ["custom_datasource"],
+  "baseBranches": ["custom_datasource_maven"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 20,
   "packageRules": [
     {
-      "groupName": "all maven dependencies",
-      "matchPackageNames": ["*"],
-      "matchDatasources": ["maven"]
+      "groupName": "JUnit security update",
+      "matchDatasources": ["maven"],
+      "matchPackageNames": ["junit/junit"],
+      "overrideDatasource": "custom.grype",
+      "overridePackageName": "junit"
     }
   ],
   "customManagers": [

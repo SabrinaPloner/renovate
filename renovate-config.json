@@ -11,7 +11,7 @@
     {
       "groupName": "JUnit security update",
       "matchDatasources": ["maven"],
-      "matchPackageNames": ["junit/junit"],
+      "matchPackageNames": ["junit:junit"],
       "overrideDatasource": "custom.grype",
       "overridePackageName": "junit"
     }

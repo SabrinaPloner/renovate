@@ -24,15 +24,6 @@
       "depNameTemplate": "k3s",
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
       "datasourceTemplate": "custom.k3s"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["\\.yml$"],
-      "datasourceTemplate": "custom.grype",
-      "matchStrings": [
-        "#\\s*renovate:\\s*(datasource=(?<datasource>.*?) )?depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\s*\\w*:\\s*(?<currentValue>.*)\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
   ],
   "customDatasources": {
@@ -49,8 +40,8 @@
       ]
     },
     "grype": {
-      "defaultRegistryUrlTemplate": "file://datasource/{{packageName}}/versiontracker.txt",
-      "format": "plain"
+      "defaultRegistryUrlTemplate": "file://datasource/{{packageName}}/versiontracker.json",
+      "format": "json"
     }
   },
 "recreateWhen": "always",
